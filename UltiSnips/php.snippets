@@ -1,0 +1,105 @@
+snippet gs "PHP Shit" b
+public function get$1()
+{
+    return $this->${1/\w+\s*/\l$0/g};
+}
+
+public function set$1($${1/\w+\s*/\l$0/g})
+{
+    $this->${1/\w+\s*/\l$0/g} = $${1/\w+\s*/\l$0/g};
+}
+
+$0
+endsnippet
+
+
+
+
+# fuck you
+
+snippet g "PHP getter" b
+public function get$1()
+{
+    return $this->${1/\w+\s*/\l$0/g};
+}
+
+$0
+endsnippet
+
+
+snippet s "PHP setter" b
+public function set$1($${1/\w+\s*/\l$0/g})
+{
+    $this->${1/\w+\s*/\l$0/g} = $${1/\w+\s*/\l$0/g};
+}
+
+$0
+endsnippet
+
+snippet pri "PHP private function" b
+private function $1($2)
+{
+    $0
+}
+
+endsnippet
+
+snippet pub "PHP public function" b
+public function $1($2)
+{
+    $0
+}
+
+endsnippet
+
+snippet pro "PHP protected function" b
+protected function $1($2)
+{
+    $0
+}
+
+endsnippet
+
+snippet class "Stupid class" b
+<?php
+
+namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'ghub', 'Ghub'), '/', '\\')`;
+
+class `!p snip.rv = string.replace(fn, '.php', '')`$1
+{
+    $0
+}
+endsnippet
+
+
+snippet command "log full of piss" b
+<?php
+
+namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'ghub', 'Ghub'), '/', '\\')`;
+
+use Ghub\App\Commands\Command;
+
+class `!p snip.rv = string.replace(fn, '.php', '')` implements Command
+{
+    $0
+}
+endsnippet
+
+
+snippet commandhandler "tree full of piss" b
+<?php
+
+namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'ghub', 'Ghub'), '/', '\\')`;
+
+use Ghub\App\Commands\Command;
+use Ghub\App\Commands\CommandHandler;
+
+class `!p snip.rv = string.replace(fn, '.php', '')` implements CommandHandler
+{
+    public function handle(Command $command)
+    {
+        $0
+    }
+}
+endsnippet
+
