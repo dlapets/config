@@ -7,6 +7,7 @@ public function get$1()
 public function set$1($${1/\w+\s*/\l$0/g})
 {
     $this->${1/\w+\s*/\l$0/g} = $${1/\w+\s*/\l$0/g};
+    return $this;
 }
 
 $0
@@ -31,6 +32,7 @@ snippet s "PHP setter" b
 public function set$1($${1/\w+\s*/\l$0/g})
 {
     $this->${1/\w+\s*/\l$0/g} = $${1/\w+\s*/\l$0/g};
+    return $this;
 }
 
 $0
@@ -63,7 +65,7 @@ endsnippet
 snippet class "Stupid class" b
 <?php
 
-namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'ghub', 'Ghub'), '/', '\\')`;
+namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'src', 'Ghub'), '/', '\\')`;
 
 class `!p snip.rv = string.replace(fn, '.php', '')`$1
 {
@@ -71,35 +73,4 @@ class `!p snip.rv = string.replace(fn, '.php', '')`$1
 }
 endsnippet
 
-
-snippet command "log full of piss" b
-<?php
-
-namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'ghub', 'Ghub'), '/', '\\')`;
-
-use Ghub\App\Commands\Command;
-
-class `!p snip.rv = string.replace(fn, '.php', '')` implements Command
-{
-    $0
-}
-endsnippet
-
-
-snippet commandhandler "tree full of piss" b
-<?php
-
-namespace `!p snip.rv = string.replace(string.replace(os.path.dirname(path), 'ghub', 'Ghub'), '/', '\\')`;
-
-use Ghub\App\Commands\Command;
-use Ghub\App\Commands\CommandHandler;
-
-class `!p snip.rv = string.replace(fn, '.php', '')` implements CommandHandler
-{
-    public function handle(Command $command)
-    {
-        $0
-    }
-}
-endsnippet
 

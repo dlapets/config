@@ -37,6 +37,15 @@ augroup filetype
 
     "wk migrations
     autocmd BufNewFile,BufRead *.mig set filetype=mysql
+
+    " raml
+    autocmd BufNewFile,BufRead *.raml set filetype=yaml
+
+augroup END
+
+augroup indent
+    autocmd FileType json setlocal ts=2 sw=2
+    autocmd FileType yaml setlocal ts=2 sw=2
 augroup END
 
 if has("gui_running")
