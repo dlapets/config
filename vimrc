@@ -3,6 +3,7 @@ filetype off " vundle needs this
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'SirVer/ultisnips.git'
 Plugin 'fatih/vim-go.git'
 Plugin 'fholgado/minibufexpl.vim.git'
@@ -12,6 +13,9 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 syntax on
 set number
