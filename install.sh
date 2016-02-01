@@ -6,12 +6,11 @@ then
     mkdir directory
 fi
 
-echo "Install pathogen"
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
 echo "Update submodules"
 git submodule init
 git submodule update
+
+vim +PluginInstall +qall
 
 echo "Set up vimrc"
 if [ -f $HOME/.vimrc ]
@@ -19,4 +18,4 @@ then
     rm $HOME/.vimrc
 fi
 
-ln -s `pwd`/.vimrc $HOME/.vimrc
+ln -s `pwd`/vimrc $HOME/.vimrc

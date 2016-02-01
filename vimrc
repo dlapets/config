@@ -1,4 +1,17 @@
 set nocompatible
+filetype off " vundle needs this
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'SirVer/ultisnips.git'
+Plugin 'fatih/vim-go.git'
+Plugin 'fholgado/minibufexpl.vim.git'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'majutsushi/tagbar.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'tobyS/vmustache.git'
+Plugin 'tpope/vim-fugitive.git'
 
 syntax on
 set number
@@ -25,7 +38,6 @@ set hidden
 set nobackup
 set directory=~/.vim/directory
 
-exec pathogen#infect()
 
 nmap <F7> :Gblame<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -56,5 +68,5 @@ if has("gui_running")
     "set clipboard=unnamed
     "set guifontwide=MingLiU:h10 "For windows to display mixed character sets
 else
-	colorscheme elflord
+	colorscheme desert
 endif
