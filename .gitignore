@@ -1,4 +1,5 @@
 autoload/pathogen.vim
 directory/*
 doc/*
+bundle/*
 .VimballRecord
