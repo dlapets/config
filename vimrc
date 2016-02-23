@@ -4,22 +4,27 @@ filetype off " vundle needs this
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'SirVer/ultisnips.git'
 Plugin 'fatih/vim-go.git'
 Plugin 'fholgado/minibufexpl.vim.git'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'scrooloose/nerdtree.git'
-"Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/syntastic.git'
+"Plugin 'Shougo/neocomplete.vim.git'
+Plugin 'SirVer/ultisnips.git'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set mouse=a
+set ttymouse=xterm2
+
 syntax on
 set number
 set relativenumber
+set ruler
 set enc=utf-8
  
 set hlsearch
@@ -45,6 +50,7 @@ set directory=~/.vim/directory
 set lazyredraw
 
 nmap <F5> :GoTest<CR>
+nmap <F6> :set relativenumber!<CR>
 nmap <F7> :Gblame<CR>
 nmap <F8> :TagbarToggle<CR>
 map <F9> :NERDTreeToggle<CR>
@@ -96,3 +102,4 @@ au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$")+1, a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
+
