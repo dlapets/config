@@ -48,7 +48,7 @@ set hidden
 set nobackup
 set directory=~/.vim/directory
 
-set lazyredraw
+set lazyredraw " otherwise using relativenumber is slow in terminal
 
 nmap <F5> :GoTest<CR>
 nmap <F6> :set relativenumber!<CR>
@@ -59,6 +59,7 @@ map <F9> :NERDTreeToggle<CR>
 augroup filetype
     " raml
     autocmd BufNewFile,BufRead *.raml set filetype=yaml
+
 augroup END
 
 augroup indent
@@ -80,6 +81,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
