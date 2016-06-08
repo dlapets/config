@@ -1,0 +1,51 @@
+snippet goch
+package `!v expand('%:p:h:t')`
+
+import (
+	"testing"
+
+	. "github.com/adjust/backend-vendor/github.com/adjust/gocheck"
+)
+
+func Test$1Suite(t *testing.T) {
+	TestingSuiteT(&$1Suite{}, t)
+}
+
+type $1Suite struct{
+	$0
+}
+
+func (suite *$1Suite) SetUpSuite(c *C) {
+}
+
+func (suite *$1Suite) SetUpTest(c *C) {
+}
+
+endsnippet
+
+snippet pack
+package `!v expand('%:p:h:t')`
+
+
+endsnippet
+
+snippet te
+func (suite *$1) Test$2(c *C) {
+	$0
+	c.Assert(true, Equals, false) // TODO
+}
+
+endsnippet
+
+snippet div
+// -----------------------------------------------------------------------------
+// $1
+// -----------------------------------------------------------------------------
+endsnippet
+snippet hr
+// -----------------------------------------------------------------------------
+endsnippet
+
+#global !p
+#
+#endglobal
