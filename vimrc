@@ -15,6 +15,7 @@ Plugin 'scrooloose/syntastic.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
+"Plugin 'tpope/vim-unimpaired.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
