@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = dlapets
+email = lapets@adjust.com
+[core]
+	editor = /usr/local/opt/vim/bin/vim
+    pager = less --tabs=1,5 -R -S -X -F
+[push]
+	default = simple
