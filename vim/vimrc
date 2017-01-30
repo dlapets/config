@@ -58,9 +58,7 @@ nmap <F8> :TagbarToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 
 augroup filetype
-    " raml
     autocmd BufNewFile,BufRead *.raml set filetype=yaml
-
 augroup END
 
 augroup indent
@@ -77,8 +75,6 @@ else
 endif
 
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
-
-
 
 let mapleader=","
 let g:go_highlight_functions = 1
@@ -110,4 +106,3 @@ au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$")+1, a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
-
