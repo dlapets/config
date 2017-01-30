@@ -3,7 +3,6 @@ DIR=`pwd`
 
 help:
 	@echo "fuck you i won't help you"
-	@echo $(DIR)
 
 vim:
 	-rm ~/.vimrc
@@ -18,5 +17,14 @@ vim:
 			git clone "https://github.com/VundleVim/Vundle.vim.git" $(DIR)/vim/bundle/Vundle.vim || { echo >&2 "git clone failed, cannot continue."; exit 1;}; \
 		fi
 	vim +PluginInstall +qall
+
+tmux:
+	-rm ~/.tmux.conf
+	ln -s $(DIR)/tmux.conf ~/.tmux.conf
+
+git:
+	-rm ~/.gitconfig
+	ln -s $(DIR)/gitconfig ~/.gitconfig
+
 	
-.PHONY: vim help
+.PHONY: vim help tmux git
