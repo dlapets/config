@@ -1,49 +1,57 @@
-snippet goch
-package `!v expand('%:p:h:t')`
+snippet ass
+package `!v expand('%:p:h:t')`_test
 
 import (
 	"testing"
 
-	. "github.com/adjust/backend-vendor/github.com/adjust/gocheck"
+	"github.com/adjust/backend-vendor/github.com/stretchr/testify/assert"
+	"github.com/adjust/backend-vendor/github.com/stretchr/testify/require"
 )
 
-func Test$1Suite(t *testing.T) {
-	TestingSuiteT(&$1Suite{}, t)
-}
-
-type $1Suite struct{
+func Test$1(t *testing.T) {
 	$0
+	require.Equal(t, true, false)
+	assert.Equal(t, true, false)
 }
-
-func (suite *$1Suite) SetUpSuite(c *C) {
-}
-
-func (suite *$1Suite) SetUpTest(c *C) {
-}
-
 endsnippet
 
 snippet pack
 package `!v expand('%:p:h:t')`
 
-
+$0
 endsnippet
 
 snippet te
-func (suite *$1) Test$2(c *C) {
+func Test$1(t *testing.T) {
 	$0
-	c.Assert(true, Equals, false) // TODO
+	require.Equal(t, true, false)
+	assert.Equal(t, true, false)
 }
 
 endsnippet
 
+snippet t
+func Test$1(t *testing.T) {
+	$0
+	assert.Equal(t, true, false)
+}
+
+endsnippet
+
+snippet tr
+t.Run(name, func(t *testing.T) {
+	$0
+})
+endsnippet
+
+
 snippet ae
-c.Assert(err, IsNil)
+require.NoError(t, err)
 $0
 endsnippet
 
 snippet a
-c.Assert($1, $2, $3)
+assert.$1(t, $2, $3)
 $0
 endsnippet
 
