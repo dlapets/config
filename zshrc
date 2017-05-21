@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/dennis/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -86,8 +86,15 @@ bindkey -v
 export GOPATH=$HOME/go
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin"
 
-alias vim=/usr/local/opt/vim/bin/vim
-alias vi=/usr/local/opt/vim/bin/vim
+if [ "$(uname)" = 'Darwin' ]; then
+    alias vim=/usr/local/opt/vim/bin/vim
+    alias vi=/usr/local/opt/vim/bin/vim
+fi
+
+if [ "$(uname)" = 'Linux' ]; then
+    # shitty hack for my go setup
+    export PATH="/usr/local/go/bin:$PATH"
+fi
 
 alias got="fortune; echo; go test"
 alias gotf="got --gocheck.f"
