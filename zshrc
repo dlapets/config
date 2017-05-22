@@ -96,8 +96,12 @@ if [ "$(uname)" = 'Linux' ]; then
     export PATH="/usr/local/go/bin:$PATH"
 fi
 
-alias got="fortune; echo; go test"
-alias gotf="got --gocheck.f"
+GOTEST="go test"
+GOTESTWITHSUB="if [ -d test ]; then $GOTEST ./...; else $GOTEST; fi"
+
+alias got="fortune; echo; $GOTESTWITHSUB"
+#TODO fix or remove
+alias gotf="$GOTEST --gocheck.f"
 
 alias gfrb="git fetch && git rebase origin/master"
 alias gfrbi="git fetch && git rebase -i origin/master"
