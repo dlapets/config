@@ -112,8 +112,7 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 if [ "$(uname)" = 'Linux' ]; then
-    # shitty hack for my go setup
-    export PATH="/usr/local/go/bin:$PATH"
+    export PATH="/usr/local/go/bin:/usr/games/:$PATH"
 fi
 
 GOTEST="go test"
