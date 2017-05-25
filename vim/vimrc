@@ -90,7 +90,15 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
-let g:tagbar_ctags_bin = '/usr/local/opt/ctags/bin/ctags'
+" TODO reorganize this??
+
+let s:uname = system("uname -s")
+
+if s:uname == "Darwin"
+    let g:tagbar_ctags_bin = '/usr/local/opt/ctags/bin/ctags'
+elseif s:uname == "Linux"
+    let g:tagbar_ctags_bin = '/usr/bin/ctags'
+endif
 
 " go related settings from welle
 au FileType go nmap <leader>r <Plug>(go-run)
