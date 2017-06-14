@@ -16,6 +16,7 @@ Plugin 'SirVer/ultisnips.git'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-unimpaired.git'
+Plugin 'AndrewRadev/writable_search.vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,6 +33,8 @@ set enc=utf-8
 set hlsearch
 set incsearch
 set smartcase
+
+"set laststatus=2 " always show what file you're on
 
 set backspace=2 " make backspace work like most other apps
 set ts=4
