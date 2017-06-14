@@ -82,6 +82,26 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# TODO make some kinda color picker instead of this poo
+COLOR_BLACK="\e[30m"
+COLOR_BLACK_BRIGHT="\e[30;1m" # hell yeah
+COLOR_RED="\e[31m"
+COLOR_RED_BRIGHT="\e[31;1m"
+COLOR_GREEN="\e[32m"
+COLOR_GREEN_BRIGHT="\e[32;1m"
+COLOR_YELLOW="\e[33m"
+COLOR_YELLOW_BRIGHT="\e[33;1m"
+COLOR_BLUE="\e[34m"
+COLOR_BLUE_BRIGHT="\e[34;1m"
+COLOR_MAGENTA="\e[35m"
+COLOR_MAGENTA_BRIGHT="\e[35;1m"
+COLOR_CYAN="\e[36m"
+COLOR_CYAN_BRIGHT="\e[36;1m"
+COLOR_WHITE="\e[37m"
+COLOR_WHITE_BRIGHT="\e[37;1m"
+
+COLOR_RESET="\e[39;49m\e[0m"
+
 bindkey -v
 export GOPATH=$HOME/go
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin"
@@ -97,9 +117,18 @@ if [ "$(uname)" = 'Linux' ]; then
 fi
 
 GOTEST="go test"
+# TODO fix this, it doesn't like when you pass params to it
 GOTESTWITHSUB="if [ -d test ]; then $GOTEST ./...; else $GOTEST; fi"
 
 alias got="fortune; echo; $GOTESTWITHSUB"
+
+FUCK_YOU_AND_GOT="echo -n '$COLOR_RED_BRIGHT'; fortune -o; echo '$COLOR_RESET'; $GOTESTWITHSUB"
+alias gto=$FUCK_YOU_AND_GOT
+alias goit=$FUCK_YOU_AND_GOT
+alias giot=$FUCK_YOU_AND_GOT
+alias gott=$FUCK_YOU_AND_GOT
+alias gort=$FUCK_YOU_AND_GOT
+#
 #TODO fix or remove
 alias gotf="$GOTEST --gocheck.f"
 
