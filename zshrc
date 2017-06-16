@@ -122,12 +122,23 @@ GOTESTWITHSUB="if [ -d test ]; then $GOTEST ./...; else $GOTEST; fi"
 alias got="fortune; echo; $GOTESTWITHSUB"
 
 FUCK_YOU_AND_GOT="echo -n '$COLOR_RED_BRIGHT'; fortune -o; echo '$COLOR_RESET'; $GOTESTWITHSUB"
-alias gto=$FUCK_YOU_AND_GOT
-alias goit=$FUCK_YOU_AND_GOT
-alias giot=$FUCK_YOU_AND_GOT
-alias gott=$FUCK_YOU_AND_GOT
-alias gort=$FUCK_YOU_AND_GOT
-#
+GOTS=(
+    3got
+    fgot
+    giot
+    gog
+    gogt
+    goit
+    gort
+    gotg
+    gott
+    goty
+    gto
+)
+for spelling in ${GOTS}; do 
+    alias $spelling=$FUCK_YOU_AND_GOT
+done
+
 #TODO fix or remove
 alias gotf="$GOTEST --gocheck.f"
 
