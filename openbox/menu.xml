@@ -17,7 +17,7 @@
   <separator />
 
   <menu id="client-list-menu" />
-  <menu id="dennis-menu" label="Tools" execute="/home/dennis/bin/obmenu.pl" />
+  <menu id="dennis-menu" label="Tools" execute="~/config/utils/obmenu" />
 
   <separator />
     <item label="ObConf">
