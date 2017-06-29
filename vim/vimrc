@@ -6,6 +6,7 @@ call vundle#begin()
 
 "Plugin 'Shougo/neocomplete.vim.git'
 "Plugin 'wellle/targets.vim.git'
+"Plugin 'bronson/vim-visual-star-search'
 Plugin 'AndrewRadev/writable_search.vim.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'fatih/vim-go.git'
