@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# TODO make it work for current state too
+#`git status --porcelain|sed -e "s/...//"`
+
+paths=`git diff-tree --no-commit-id --name-only -r HEAD`
+for path in $paths; do
+    dirs=`dirname $path`$'\n'$dirs
+done
+dirs=`printf "$dirs"|sort -ub`
+
+printf "Will test:\n$dirs\n"
+
+for test_dir in $dirs; do
+    printf "\nTesting $test_dir...\n"
+    if [ ! -d $test_dir ]; then
+        printf "$test_dir doesn't exist\n"
+        continue
+    fi
+    pushd $test_dir >/dev/null
+    go test || exit 1
+    popd >/dev/null
+done
+printf "All done.\n"
+
+exit 0
