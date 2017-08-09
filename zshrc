@@ -44,8 +44,7 @@ if [ -e $HOME/google-cloud-sdk/path.zsh.inc ]; then
     source $HOME/google-cloud-sdk/path.zsh.inc 
 fi
 
-# TODO consider changing?
-ulimit -n 512
+ulimit -n 9999
 
 ################################################################################
 # Local settings or whatever
