@@ -113,11 +113,11 @@ export PATH="$PATH:$GOPATH/bin"
 GOTEST="go test"
 
 # TODO fix this, it doesn't like when you pass params to it
-GOTESTWITHSUB="if [ -d test ]; then $GOTEST ./...; else $GOTEST; fi"
+#GOTESTWITHSUB="if [ -d test ]; then $GOTEST ./...; else $GOTEST; fi"
 
-alias got="fortune; echo; $GOTESTWITHSUB"
+alias got="fortune; echo; $GOTEST"
 
-FUCK_YOU_AND_GOT="echo -n '$COLOR_RED_BRIGHT'; fortune -o; echo '$COLOR_RESET'; $GOTESTWITHSUB"
+FUCK_YOU_AND_GOT="echo -n '$COLOR_RED_BRIGHT'; fortune -o; echo '$COLOR_RESET'; $GOTEST"
 GOTS=(
     3got
     fgot
@@ -139,26 +139,3 @@ for spelling in ${GOTS}; do
 done
 
 alias gotf="$GOTEST --gocheck.f"
-
-#TODO port ot zsh
-###############################################
-### gocd -- navigate Go packages in $GOPATH ###
-###############################################
-
-#function gocd() {
-#  cd "$GOPATH/src/$1"
-#}
-#
-#function __gocd_complete() {
-#  COMPREPLY=()
-#
-#  local cur="${COMP_WORDS[COMP_CWORD]}"
-#  
-#  COMPREPLY=( $(for pkg in $( echo "${GOPATH[@]}/src/$cur*/" ); do echo ${pkg#$GOPATH/src/}; done) )
-#
-#  return 0
-#}
-
-#complete -o nospace -F __gocd_complete gocd
-
-### End of gocd ###
