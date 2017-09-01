@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php // TODO port to a real language
 
 ini_set("memory_limit", "-1") ;
