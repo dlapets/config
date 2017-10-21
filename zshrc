@@ -87,8 +87,12 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$CONFIG_PATH/utils:$PATH" # TODO maybe there's a better way
 
 if [ "$(uname)" = 'Linux' ]; then
-    export PATH="/usr/games:$PATH"
-    export PATH="/usr/local/go/bin:$PATH"
+    if [ -d /usr/games ]; then
+        export PATH="/usr/games:$PATH"
+    fi
+    if [ -d /usr/local/go/bin ]; then
+        export PATH="/usr/local/go/bin:$PATH"
+    fi
 fi
 
 if [ "$(uname)" = 'Darwin' ]; then
