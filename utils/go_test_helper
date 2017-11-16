@@ -17,6 +17,12 @@ for test_dir in $dirs; do
         printf "$test_dir doesn't exist\n"
         continue
     fi
+
+    if !(ls $test_dir/*_test.go 1> /dev/null 2>&1); then
+        echo "$test_dir has no tests"
+        continue
+    fi
+
     pushd $test_dir >/dev/null
     go test || exit 1
     popd >/dev/null
