@@ -105,6 +105,7 @@ fi
 alias gfrb="git fetch && git rebase origin/master"
 alias gfrbi="git fetch && git rebase -i origin/master"
 alias glgg="git log --oneline --graph HEAD~10.. "
+alias glggg="git log --oneline --graph"
 alias gcd="d=\`git status -s|head -n1|sed -e 's/^...\(.*\)/\1/'\` && [[ -z \$d ]] || cd \`dirname \$d\`"
 
 ################################################################################
@@ -130,6 +131,7 @@ GOTS=(
     giot
     go0t
     gog
+    goot
     gogt
     goit
     gort
@@ -137,6 +139,7 @@ GOTS=(
     gott
     goty
     gto
+    ogt
 )
 for spelling in ${GOTS}; do 
     alias $spelling=$FUCK_YOU_AND_GOT
