@@ -13,8 +13,7 @@ vim:
 	if [ ! -d $(DIR)/vim/bundle ]; then mkdir $(DIR)/vim/bundle; fi
 	if [ ! -d $(DIR)/vim/bundle/Vundle.vim ]; \
 		then \
-			echo "Fetching Vundle..."; \
-			git clone "https://github.com/VundleVim/Vundle.vim.git" $(DIR)/vim/bundle/Vundle.vim || { echo >&2 "git clone failed, cannot continue."; exit 1;}; \
+			git clone "https://github.com/VundleVim/Vundle.vim.git" $(DIR)/vim/bundle/Vundle.vim || exit 1; \
 		fi
 	vim +PluginInstall +qall
 
@@ -26,5 +25,9 @@ git:
 	-rm ~/.gitconfig
 	ln -s $(DIR)/gitconfig ~/.gitconfig
 
+fortune: # downloads a bunch of fortunes, but you might need to do some setup
+	-rm -rvf $(DIR)/fortunes
+	mkdir $(DIR)/fortunes
+	git clone "https://github.com/iangreenleaf/nietzsche" $(DIR)/fortunes/nietzsche || exit 1; \
 	
-.PHONY: vim help tmux git
+.PHONY: vim help tmux git fortune
