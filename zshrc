@@ -101,6 +101,14 @@ if [ "$(uname)" = 'Darwin' ]; then
     alias vi=/usr/local/opt/vim/bin/vim
 fi
 
+if type "fortune" > /dev/null; then
+    # TODO reararnghe this
+    alias fortune="echo -n '$COLOR_GREEN'; fortune $CONFIG_PATH/fortunes/*/fortune; echo -n '$COLOR_RESET'"
+else
+    alias fortune="echo '${COLOR_YELLOW_BRIGHT}fortune is not installed${COLOR_RESET}'"
+fi
+
+
 # Git
 alias gfrb="git fetch && git rebase origin/master"
 alias gfrbi="git fetch && git rebase -i origin/master"
