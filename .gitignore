@@ -3,5 +3,6 @@ vim/directory/*
 vim/doc/*
 vim/bundle/*
 vim/.VimballRecord
+fortunes/*
 
 zshaliases
