@@ -42,7 +42,7 @@ set backspace=2 " make backspace work like most other apps
 set ts=4
 set sw=4
 
-set expandtab
+"set expandtab
 set smarttab
 set smartindent
 
