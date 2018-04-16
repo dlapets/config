@@ -19,6 +19,7 @@ Plugin 'scrooloose/syntastic.git'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-unimpaired.git'
+Plugin 'altercation/vim-colors-solarized.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -78,7 +79,8 @@ if has("gui_running")
 elseif &diff
 	colorscheme desert
 else
-	colorscheme elflord
+	set background=dark
+	colorscheme solarized
 endif
 
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
