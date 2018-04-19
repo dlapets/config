@@ -10,7 +10,7 @@ ZSH_THEME="robbyrussell"
 DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 # DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="false"
 # ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -22,7 +22,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git)
+plugins=(git screen)
 
 source $ZSH/oh-my-zsh.sh
 
