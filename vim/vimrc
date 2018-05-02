@@ -7,6 +7,7 @@ call vundle#begin()
 "Plugin 'Shougo/neocomplete.vim.git'
 "Plugin 'wellle/targets.vim.git'
 "Plugin 'bronson/vim-visual-star-search'
+Plugin 'AndrewRadev/linediff.vim'
 Plugin 'AndrewRadev/writable_search.vim.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'fatih/vim-go.git'
@@ -95,6 +96,8 @@ let g:go_fmt_command = "goimports"
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+let g:ag_working_path_mode="r"
 
 " TODO reorganize this??
 
