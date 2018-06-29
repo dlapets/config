@@ -37,6 +37,7 @@ set enc=utf-8
 set hlsearch
 set incsearch
 set smartcase
+set history=1000
 
 "set laststatus=2 " always show what file you're on
 
@@ -44,8 +45,8 @@ set backspace=2 " make backspace work like most other apps
 set ts=4
 set sw=4
 
-"set expandtab
-set smarttab
+"set smarttab
+set expandtab
 set smartindent
 
 set scrolloff=4 " show 4 lines around where you are

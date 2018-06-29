@@ -3,15 +3,10 @@ package `!v expand('%:p:h:t')`_test
 
 import (
 	"testing"
-
-	"github.com/adjust/backend-vendor/github.com/stretchr/testify/assert"
-	"github.com/adjust/backend-vendor/github.com/stretchr/testify/require"
 )
 
 func Test$1(t *testing.T) {
 	$0
-	require.Equal(t, true, false)
-	assert.Equal(t, true, false)
 }
 endsnippet
 
@@ -30,23 +25,22 @@ func Test$1(t *testing.T) {
 
 endsnippet
 
-snippet t
-func Test$1(t *testing.T) {
-	$0
-	assert.Equal(t, true, false)
-}
-
-endsnippet
-
 snippet tr
 t.Run(name, func(t *testing.T) {
 	$0
 })
 endsnippet
 
+snippet table
+for name, tc := range cases {
+	t.Run(name, func(t *testing.T) {
+		$0
+	})
+}
+endsnippet
 
 snippet ae
-c.Assert(err, IsNil)
+assert.NoError(t, err)
 $0
 endsnippet
 
@@ -56,7 +50,7 @@ $0
 endsnippet
 
 snippet a
-assert.$1(t, $2, $3)
+assert.Equal(t, $1, $2)
 $0
 endsnippet
 
@@ -70,6 +64,12 @@ endsnippet
 snippet hr
 // -----------------------------------------------------------------------------
 $0
+endsnippet
+
+snippet linit
+func init() {
+	log.SetOutput(logger.NewFileWriter("./test.log"))
+}
 endsnippet
 
 snippet wtf
