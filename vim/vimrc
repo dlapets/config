@@ -21,6 +21,7 @@ Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-unimpaired.git'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'sotte/presenting.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -5,7 +5,4 @@ if git status --porcelain|grep "^\w"; then
     exit 1
 fi
 
-NAME="spacer-commit-"`head /dev/random | md5`
-touch $NAME
-git add $NAME
-git commit -m "--------------------------------------------------"
+git commit --allow-empty -m "--------------------------------------------------"

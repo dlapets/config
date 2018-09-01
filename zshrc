@@ -110,8 +110,8 @@ fi
 
 
 # Git
-alias gfrb="git fetch && git rebase origin/master"
-alias gfrbi="git fetch && git rebase -i origin/master"
+alias gfrb="git fetch && git rebase --keep-empty origin/master"
+alias gfrbi="git fetch && git rebase --keep-empty -i origin/master"
 alias glgg="git log --oneline --graph HEAD~10.. "
 alias glggg="git log --oneline --graph"
 alias gcd="d=\`git status -s|head -n1|sed -e 's/^...\(.*\)/\1/'\` && [[ -z \$d ]] || cd \`dirname \$d\`"
@@ -125,9 +125,6 @@ export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
 GOTEST="go test"
-
-# TODO fix this, it doesn't like when you pass params to it
-#GOTESTWITHSUB="if [ -d test ]; then $GOTEST ./...; else $GOTEST; fi"
 
 alias got="fortune; echo; $GOTEST"
 
