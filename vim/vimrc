@@ -31,7 +31,7 @@ set ttymouse=xterm2
 
 syntax on
 set number
-set relativenumber
+"set relativenumber
 set ruler
 set enc=utf-8
  
@@ -49,6 +49,7 @@ set sw=4
 "set smarttab
 set expandtab
 set smartindent
+set noshowmatch
 
 set scrolloff=4 " show 4 lines around where you are
 
@@ -57,6 +58,7 @@ set undolevels=100
 set hidden
 set nobackup
 set directory=~/.vim/directory
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,*.gz
 
 set lazyredraw " otherwise using relativenumber is slow in terminal
 
@@ -71,8 +73,9 @@ augroup filetype
 augroup END
 
 augroup indent
-    autocmd FileType json setlocal ts=2 sw=2
-    autocmd FileType yaml setlocal ts=2 sw=2
+    autocmd FileType json setlocal ts=2 sw=2 expandtab
+    autocmd FileType yaml setlocal ts=2 sw=2 expandtab
+    autocmd FileType ruby setlocal ts=2 sw=2 expandtab
 augroup END
 
 if has("gui_running")

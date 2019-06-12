@@ -134,6 +134,7 @@ GOTS=(
     fgot
     g0ot
     g0t
+    ghot
     giot
     go0t
     gog

@@ -40,17 +40,34 @@ for name, tc := range cases {
 endsnippet
 
 snippet ae
+assert.Error(t, err)
+$0
+endsnippet
+
+snippet ane
 assert.NoError(t, err)
 $0
 endsnippet
 
 snippet re
+require.Error(t, err)
+$0
+endsnippet
+
+snippet rne
 require.NoError(t, err)
 $0
 endsnippet
 
 snippet a
 assert.Equal(t, $1, $2)
+$0
+endsnippet
+
+snippet ie
+if err != nil {
+	return nil, err
+}
 $0
 endsnippet
 
