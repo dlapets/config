@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+base36=$(([##36]$1))
+echo ${(L)base36}
