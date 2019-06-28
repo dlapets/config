@@ -62,7 +62,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,*.gz
 
 set lazyredraw " otherwise using relativenumber is slow in terminal
 
-nmap <F5> :GoTest<CR>
+"nmap <F5> :GoTest<CR>
 nmap <F6> :set relativenumber!<CR>
 nmap <F7> :Gblame<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -113,18 +113,6 @@ if s:uname == "Darwin"
 elseif s:uname == "Linux"
     let g:tagbar_ctags_bin = '/usr/bin/ctags'
 endif
-
-" go related settings from welle
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <Leader>s <Plug>(go-implements)
 
 "make quickfix window not huge
 au FileType qf call AdjustWindowHeight(3, 10)
