@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Run cmd
+$@ 
+
+# Send notification
+TITLE=Notifier
+SOUND=Bottle.aiff
+CMD=$(echo "$*"|sed 's/"/\\"/')
+
+echo "display notification \"Finished: $CMD\" with title \"$TITLE\" sound name \"$SOUND\"" | osascript -
