@@ -73,4 +73,9 @@ class `!p snip.rv = string.replace(fn, '.php', '')`$1
 }
 endsnippet
 
+snippet dnd "Dump'n'Die" b
 
+header("Content-Type: text/plain");
+var_dump($input); die();
+$0
+endsnippet

@@ -153,5 +153,3 @@ GOTS=(
 for spelling in ${GOTS}; do 
     alias $spelling=$FUCK_YOU_AND_GOT
 done
-
-alias gotf="$GOTEST --gocheck.f"
