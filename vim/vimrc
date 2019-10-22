@@ -10,18 +10,19 @@ call vundle#begin()
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'AndrewRadev/writable_search.vim.git'
 Plugin 'SirVer/ultisnips.git'
+Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'fatih/vim-go.git'
 Plugin 'fholgado/minibufexpl.vim.git'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'majutsushi/tagbar.git'
+Plugin 'nvie/vim-flake8'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
+Plugin 'sotte/presenting.vim'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-unimpaired.git'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'sotte/presenting.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
