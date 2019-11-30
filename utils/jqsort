@@ -1,0 +1,2 @@
+#!/bin/bash
+jq -c '{"timestamp": .timestamp, "entry": .}' | sort | jq -c .entry
