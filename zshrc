@@ -147,12 +147,14 @@ GOTS=(
     goit
     goot
     gopt
+    tgot
     gort
     gotg
     gott
     goty
     gpot
     gto
+    lgot
     ogt
 )
 for spelling in ${GOTS}; do 
