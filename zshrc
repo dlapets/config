@@ -147,15 +147,16 @@ GOTS=(
     goit
     goot
     gopt
-    tgot
     gort
     gotg
     gott
     goty
     gpot
     gto
+    gtop
     lgot
     ogt
+    tgot
 )
 for spelling in ${GOTS}; do 
     alias $spelling=$FUCK_YOU_AND_GOT
