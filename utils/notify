@@ -1,11 +1,25 @@
 #!/bin/bash
 
-# Run cmd
+# Run the command
 $@ 
 
 # Send notification
-TITLE=Notifier
-SOUND=Bottle.aiff
-CMD=$(echo "$*"|sed 's/"/\\"/')
+# Depending on OS, we might need to do some different things or nothing
+# altogether.
 
-echo "display notification \"Finished: $CMD\" with title \"$TITLE\" sound name \"$SOUND\"" | osascript -
+UNAME=$(uname -s)
+
+if [[ "$UNAME" == "Darwin" ]]; then
+    TITLE=Notifier
+    SOUND=Bottle.aiff
+    CMD=$(echo "$*"|sed 's/"/\\"/')
+
+    echo "display notification \"Finished: $CMD\" with title \"$TITLE\" sound name \"$SOUND\"" | osascript -
+elif [[ "$UNAME" == "Linux" ]]; then
+    NOTIFY_SEND=$(which notify-send)
+    if [[ -e $NOTIFY_SEND ]]; then
+        $NOTIFY_SEND "finished" "$*"
+    else
+        >&2 echo "notify-send not found, please install libnotify-bin."
+    fi
+fi

@@ -30,6 +30,7 @@ if [[ "$CHK" == "y" ]]; then
         arandr \
         firefox-esr \
         fonts-roboto \
+        libnotify-bin \
         notification-daemon \
         openbox \
         rxvt-unicode \
