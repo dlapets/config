@@ -10,6 +10,7 @@ read CHK
 if [[ "$CHK" == "y" ]]; then 
     $INSTALL \
         build-essential \
+        curl \
         fortune-mod \
         git \
         jq \
