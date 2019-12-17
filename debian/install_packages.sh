@@ -29,8 +29,8 @@ read CHK
 if [[ "$CHK" == "y" ]]; then 
     $INSTALL \
         arandr \
+        feh \
         firefox-esr \
-        fonts-roboto \
         libnotify-bin \
         notification-daemon \
         openbox \
@@ -43,7 +43,27 @@ if [[ "$CHK" == "y" ]]; then
         xfonts-terminus \
         xserver-xorg \
         ;
+
+    echo "Install eyecandy?"
+    read CHK
+    if [[ "$CHK" == "y" ]]; then 
+        $INSTALL \
+            compton \
+            tint2 \
+            ;
+    fi
+
+    echo "Install big big fonts?"
+    read CHK
+    if [[ "$CHK" == "y" ]]; then 
+        $INSTALL \
+            fonts-noto \
+            fonts-roboto \
+            ;
+    fi
 fi
+
+
 
 echo "Install linux kernel headers?"
 read CHK
