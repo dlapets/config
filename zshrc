@@ -137,6 +137,7 @@ FUCK_YOU_AND_GOT="echo -n '$COLOR_RED_BRIGHT'; fortune -o; echo '$COLOR_RESET'; 
 GOTS=(
     3got
     fgot
+    fgto
     g0ot
     g0t
     ghot
