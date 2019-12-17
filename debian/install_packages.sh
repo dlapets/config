@@ -5,7 +5,15 @@
 DEBIAN_FRONTEND=noninteractive
 INSTALL="apt-get -yq install"
 
-echo "Install cli tools?"
+NOCOLOR='\033[0m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+
+function yell(){
+    echo -e $GREEN$*$NOCOLOR
+}
+
+yell "Install cli tools?"
 read CHK
 if [[ "$CHK" == "y" ]]; then 
     $INSTALL \
@@ -13,6 +21,7 @@ if [[ "$CHK" == "y" ]]; then
         curl \
         fortune-mod \
         git \
+        htop \
         jq \
         make \
         psmisc \
@@ -24,10 +33,11 @@ if [[ "$CHK" == "y" ]]; then
         ;
 fi
 
-echo "Install X11 and friends?"
+yell "Install X11 and friends?"
 read CHK
 if [[ "$CHK" == "y" ]]; then 
     $INSTALL \
+        alsa-utils \
         arandr \
         feh \
         firefox-esr \
@@ -44,7 +54,7 @@ if [[ "$CHK" == "y" ]]; then
         xserver-xorg \
         ;
 
-    echo "Install eyecandy?"
+    yell "Install eyecandy?"
     read CHK
     if [[ "$CHK" == "y" ]]; then 
         $INSTALL \
@@ -53,7 +63,7 @@ if [[ "$CHK" == "y" ]]; then
             ;
     fi
 
-    echo "Install big big fonts?"
+    yell "Install big big fonts?"
     read CHK
     if [[ "$CHK" == "y" ]]; then 
         $INSTALL \
@@ -64,8 +74,7 @@ if [[ "$CHK" == "y" ]]; then
 fi
 
 
-
-echo "Install linux kernel headers?"
+yell "Install linux kernel headers?"
 read CHK
 if [[ "$CHK" == "y" ]]; then 
     $INSTALL \
@@ -73,13 +82,12 @@ if [[ "$CHK" == "y" ]]; then
         ;
 fi
 
-echo "Install misc. firmware/drivers?"
+yell "Install misc. firmware/drivers?"
 read CHK
 if [[ "$CHK" == "y" ]]; then 
     $INSTALL \
         amd64-microcode \
         firmware-amd-graphics \
         firmware-linux-nonfree \
-        firmware-realtek \
         ;
 fi
