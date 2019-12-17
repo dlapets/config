@@ -1,0 +1,20 @@
+Section "Extensions"
+	Option "DPMS" "Disable"
+Endsection
+
+Section "ServerFlags"
+	Option "DontVTSwitch" "0"
+	Option "DontZap" "0"
+EndSection
+
+Section "Device"
+	Identifier  "Card0"
+	Driver      "radeon"
+	BusID       "PCI:1:0:0"
+EndSection
+
+Section "Device"
+	Identifier  "Card1"
+	Driver      "radeon"
+	BusID       "PCI:1:0:1"
+EndSection
