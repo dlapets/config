@@ -17,9 +17,16 @@ vim:
 		fi
 	vim +PluginInstall +qall
 
-tmux:
+shell:
 	-rm ~/.tmux.conf
 	ln -s $(DIR)/tmux.conf ~/.tmux.conf
+	-rm ~/.inputrc
+	ln -s $(DIR)/inputrc ~/.inputrc
+	-rm ~/.bashrc
+	ln -s $(DIR)/bashrc ~/.bashrc
+	# TODO Need to get/install oh-my-zsh somehow...
+	-rm ~/.zshrc
+	ln -s $(DIR)/zshrc ~/.zshrc
 
 git:
 	-rm ~/.gitconfig
@@ -29,5 +36,16 @@ fortune: # downloads a bunch of fortunes, but you might need to do some setup
 	-rm -rvf $(DIR)/fortunes
 	mkdir $(DIR)/fortunes
 	git clone "https://github.com/iangreenleaf/nietzsche" $(DIR)/fortunes/nietzsche || exit 1; \
+
+x11:
+	-rm ~/.xsession
+	ln -s $(DIR)/xsession ~/.xsession
+	-rm ~/.Xdefaults
+	ln -s $(DIR)/Xdefaults ~/.Xdefaults
+	-rm -rvf ~/.config/openbox
+	ln -s $(DIR)/openbox ~/.config/openbox
+	-rm -rvf ~/.config/tint2
+	ln -s $(DIR)/tint2 ~/.config/tint2
+
 	
-.PHONY: vim help tmux git fortune
+.PHONY: vim help tmux git fortune x11
