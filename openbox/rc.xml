@@ -43,7 +43,7 @@
   </placement>
   <theme>
     <name>Clearlooks</name>
-    <titleLayout>NLIMC</titleLayout>
+    <titleLayout>CIML</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -479,7 +479,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleShade"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
