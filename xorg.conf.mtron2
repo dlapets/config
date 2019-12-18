@@ -5,6 +5,12 @@ Endsection
 Section "ServerFlags"
 	Option "DontVTSwitch" "0"
 	Option "DontZap" "0"
+
+    # I hate you. Stop killing my computer.
+    Option "BlankTime" "0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
 EndSection
 
 Section "Device"
