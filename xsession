@@ -29,9 +29,9 @@ if [ -e $LIGHT_LOCKER ]; then
 fi
 
 # Start compositor.
-if [ -e $COMPTON ]; then
-    $COMPTON --dbus -C -b
-fi
+#if [ -e $COMPTON ]; then
+#    $COMPTON --dbus -C -b
+#fi
 
 # Set a background.
 if [ -f $HOME/.fehbg ]; then
