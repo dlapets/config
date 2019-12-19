@@ -39,12 +39,14 @@ if [[ "$CHK" == "y" ]]; then
     $INSTALL \
         alsa-utils \
         arandr \
+        compton \
         feh \
         firefox-esr \
         libnotify-bin \
         notification-daemon \
         openbox \
         rxvt-unicode \
+        tint2 \
         ttf-mscorefonts-installer \
         x11-common \
         x11-session-utils \
@@ -53,26 +55,18 @@ if [[ "$CHK" == "y" ]]; then
         xfonts-terminus \
         xserver-xorg \
         ;
-
-    yell "Install eyecandy?"
-    read CHK
-    if [[ "$CHK" == "y" ]]; then 
-        $INSTALL \
-            compton \
-            tint2 \
-            ;
-    fi
-
-    yell "Install big big fonts?"
-    read CHK
-    if [[ "$CHK" == "y" ]]; then 
-        $INSTALL \
-            fonts-noto \
-            fonts-roboto \
-            ;
-    fi
 fi
 
+yell "Install network utils?"
+read CHK
+if [[ "$CHK" == "y" ]]; then 
+    $INSTALL \
+        netcat \
+        nftables \
+        nmap \
+        tcpdump \
+        ;
+fi
 
 yell "Install linux kernel headers?"
 read CHK
