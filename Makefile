@@ -46,6 +46,11 @@ x11:
 	ln -s $(DIR)/openbox ~/.config/openbox
 	-rm -rvf ~/.config/tint2
 	ln -s $(DIR)/tint2 ~/.config/tint2
+	mkdir -p ~/.config/gtk-3.0
+	rm -vf ~/.config/gtk-3.0/settings.ini
+	ln -s $(DIR)/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
+	rm -vf ~/.gtkrc-2.0
+	ln -s $(DIR)/gtkrc-2.0 ~/.gtkrc-2.0
 
 	
 .PHONY: vim help tmux git fortune x11
