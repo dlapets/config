@@ -42,6 +42,7 @@ if [[ "$CHK" == "y" ]]; then
         compton \
         feh \
         firefox-esr \
+        fonts-roboto \
         libnotify-bin \
         notification-daemon \
         openbox \
@@ -65,6 +66,14 @@ if [[ "$CHK" == "y" ]]; then
         nftables \
         nmap \
         tcpdump \
+        ;
+fi
+
+yell "Install ssh server?"
+read CHK
+if [[ "$CHK" == "y" ]]; then 
+    $INSTALL \
+        openssh=server \
         ;
 fi
 
