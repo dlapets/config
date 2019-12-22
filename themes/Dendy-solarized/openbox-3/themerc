@@ -1,0 +1,137 @@
+!# Clearlooks-Evolving
+!# Clearlooks as it evolves in gnome-git...
+!# Last updated 09/03/10
+
+#*.font: shadow=n
+#window.active.label.text.font:shadow=y:shadowtint=30:shadowoffset=1
+#window.inactive.label.text.font:shadow=y:shadowtint=00:shadowoffset=0
+#menu.items.font:shadow=y:shadowtint=0:shadowoffset=1
+
+border.width: 1
+padding.width: 3
+padding.height: 2
+window.handle.width: 3
+window.client.padding.width: 0
+menu.overlap: 2
+*.justify: center
+
+#*.bg.highlight: 50
+#*.bg.shadow:    05
+
+window.active.title.bg.highlight: 35
+window.active.title.bg.shadow:    05
+
+window.inactive.title.bg.highlight: 30
+window.inactive.title.bg.shadow:    05
+
+window.*.grip.bg.highlight: 50
+window.*.grip.bg.shadow:    30
+
+window.*.handle.bg.highlight: 50
+window.*.handle.bg.shadow:    30
+
+# -----------------------------------------
+# Menu settings
+# -----------------------------------------
+
+menu.border.color: #586e75
+menu.border.width: 1
+
+menu.title.bg: solid flat
+menu.title.bg.color: #073642
+menu.title.text.color: #839496
+
+menu.items.bg: Flat Solid
+menu.items.bg.color: #002b36
+menu.items.text.color: #93a1a1
+menu.items.disabled.text.color: #839496
+
+menu.items.active.bg: Flat Solid
+menu.items.active.bg.color: #586e75
+menu.items.active.bg.border.color: #4b6e99
+menu.items.active.text.color: #002b36
+
+menu.separator.width: 1
+menu.separator.padding.width: 0
+menu.separator.padding.height: 3
+menu.separator.color: #586e75
+
+# -----------------------------------------
+# Window settings
+# -----------------------------------------
+
+window.*.handle.bg: Flat solid
+window.*.handle.bg.color: #657b83
+
+window.*.grip.bg: Flat solid
+window.*.grip.bg.color: #657b83
+window.*.border.color: #586e75
+
+# -----------------------------------------
+# Active
+# -----------------------------------------
+
+#*.title.bg: Raised 
+#*.title.bg.color: #073642
+
+window.inactive.button.*.bg.border.color: #586e75
+window.inactive.button.*.bg.color: #073642
+window.inactive.button.*.bg: Flat solid Border
+window.inactive.button.*.image.color: #586e75
+
+window.inactive.label.bg: Parentrelative
+window.inactive.label.text.color: #839496
+
+window.inactive.title.bg.color: #073642
+window.inactive.title.bg: Raised solid
+window.inactive.title.separator.color: #073642
+
+## TODO
+#window.active.button.hover.bg.border.color: #4A658C
+#window.active.button.hover.bg.color: #b5d3ef
+#window.active.button.hover.image.color: #ffffff
+#window.active.button.pressed.bg.color: #7aa1d2
+#window.active.button.pressed.bg: Flat solid Border
+
+# -----------------------------------------
+# in? active
+# -----------------------------------------
+
+window.active.button.*.bg.border.color: #073642
+window.active.button.*.bg.color: #657b83
+window.active.button.*.bg: Flat solid Border
+window.active.button.*.image.color: #eee8d5
+
+window.active.label.bg: Parentrelative
+window.active.label.text.color: #eee8d5
+
+window.active.title.bg.color: #657b83
+window.active.title.bg: Raised solid
+window.active.title.separator.color: #073642
+
+
+# -----------------------------------------
+# osd (i don't know what this is !!)
+# -----------------------------------------
+
+osd.border.width: 1
+osd.border.color:  #aaaaaa
+
+osd.bg: flat border solid
+osd.bg.color: #F0EFEE
+
+osd.bg.border.color: #ffffff
+
+osd.active.label.bg: parentrelative
+osd.active.label.bg.color: #efefef
+osd.active.label.bg.border.color: #9c9e9c
+osd.active.label.text.color: #444
+
+osd.inactive.label.bg: parentrelative
+osd.inactive.label.text.color: #70747d
+
+!# yeah whatever, this is fine anyhoo?
+osd.hilight.bg: flat vertical 
+osd.hilight.bg.color: #9ebde5
+osd.unhilight.bg: flat vertical
+osd.unhilight.bg.color: #BABDB6
