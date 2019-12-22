@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+import os
+import re
+
+BATTERY_STATUS_PATTERN = re.compile("Battery 0: (\w+), (\d+)%i*(, ((..:..:..)?.*))?")
+
+class BatteryStatus:
+    def __init__(self):
+        #Battery 0: Discharging, 51%, 03:38:24 remaining
+        #Battery 0: Charging, 48%, 01:11:41 until charged
+        #Battery 0: Charging, 48%, charging at zero rate - will never fully charge
+        # no battery -> no message
+        
+        #out = os.popen("acpi").read()
+        out = "Battery 0: Discharging, 51%, 03:38:24 remaining"
+
+        res = BATTERY_STATUS_PATTERN.search(out)
+        if res == None:
+            return
+
+        self.status = res.group(1)
+        self.percent = res.group(2)
+        self.remaining = res.group(5)
+
+
+bs = BatteryStatus()
+print(bs)
+print(bs.status)
+print(bs.percent)
+print(bs.remaining)
