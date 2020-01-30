@@ -145,6 +145,7 @@ GOTS=(
     go0t
     gog
     gogt
+    goht
     goit
     goot
     gopt
@@ -155,6 +156,7 @@ GOTS=(
     gpot
     gto
     gtop
+    igt
     lgot
     ogt
     tgot
