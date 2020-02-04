@@ -114,7 +114,7 @@ alias gfrb="git fetch && git rebase --keep-empty origin/master"
 alias gfrbi="git fetch && git rebase --keep-empty -i origin/master"
 alias glgg="git log --oneline --graph HEAD~10.. "
 alias glggg="git log --oneline --graph"
-alias gcd="d=\`git status -s|head -n1|sed -e 's/^...\(.*\)/\1/'\` && [[ -z \$d ]] || cd \`dirname \$d\`"
+alias gcd="d=\`git status -s|head -n1|sed -e 's/^...\(.*\)/\1/' -e 's/ ->.*//'\` && [[ -z \$d ]] || cd \`dirname \$d\`"
 alias gti="git"
 
 ################################################################################
@@ -128,6 +128,8 @@ alias envme="source env/bin/activate"
 
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
+
+alias gth="go_test_helper"
 
 GOTEST="go test"
 
