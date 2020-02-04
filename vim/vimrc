@@ -13,6 +13,8 @@ Plugin 'SirVer/ultisnips.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'fatih/vim-go.git'
 Plugin 'fholgado/minibufexpl.vim.git'
+Plugin 'inkarkat/vim-ingo-library'
+Plugin 'inkarkat/vim-mark'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'nvie/vim-flake8'
@@ -71,6 +73,7 @@ map <F9> :NERDTreeToggle<CR>
 
 augroup filetype
     autocmd BufNewFile,BufRead *.raml set filetype=yaml
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
 augroup END
 
 augroup indent
@@ -100,9 +103,12 @@ else
 	colorscheme solarized
 endif
 
+let mapleader=","
+
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
 
-let mapleader=","
+let g:mwDefaultHighlightingPalette = 'maximum'
+
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
