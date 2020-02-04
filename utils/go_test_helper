@@ -1,5 +1,8 @@
 #!/bin/bash
 
+printf "Last commit:\n"
+git log -1 --oneline
+
 # TODO make it work for current state too
 #`git status --porcelain|sed -e "s/...//"`
 
