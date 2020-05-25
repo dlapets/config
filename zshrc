@@ -126,6 +126,8 @@ alias envme="source env/bin/activate"
 # Golang
 ################################################################################
 
+export GOPRIVATE=github.com/adjust,github.com/Unbotify
+
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
@@ -155,6 +157,7 @@ GOTS=(
     gotg
     gott
     goty
+    goy
     gpot
     gto
     gtop

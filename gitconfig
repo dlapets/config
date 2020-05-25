@@ -7,3 +7,5 @@
     pager = less --tabs=1,5 -R -S -X -F
 [push]
 	default = simple
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
