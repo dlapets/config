@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+# This is a tool for converting csv files to json so you could (for example)
+# pipe the results into jq for further processing.
+#
+# It accepts input from stdin and assumes the following:
+# - The first row is a header with non-duplicated column names.
+# - Each row has the same number of columns as the header row.
+#
+# Usage example:
+# echo "cat,dog\nMeaow,Poop\nsteps on poop, poops a lot" | csv2json | jq
+
+import csv
+import json
+import sys
+
+reader = csv.reader(sys.stdin)
+
+header = next(reader)
+column_count = len(header)
+
+for row in reader:
+    blob = {}
+
+    for i in range(column_count):
+        blob[header[i]] = row[i]
+
+    print(json.dumps(blob))
