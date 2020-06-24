@@ -25,4 +25,9 @@ for row in reader:
     for i in range(column_count):
         blob[header[i]] = row[i]
 
-    print(json.dumps(blob))
+    try:
+        print(json.dumps(blob))
+    except BrokenPipeError:
+        # Handle piping to `head`, etc. without complaining:
+        sys.stderr.close()
+        break
