@@ -27,7 +27,8 @@ for row in reader:
 
     try:
         print(json.dumps(blob))
+
     except BrokenPipeError:
-        # Handle piping to `head`, etc. without complaining:
+        # Handle piping to `head`, etc. without complaining.
         sys.stderr.close()
         break
