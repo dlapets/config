@@ -8,7 +8,7 @@
 # - Each row has the same number of columns as the header row.
 #
 # Usage example:
-# echo "cat,dog\nMeaow,Poop\nsteps on poop, poops a lot" | csv2json | jq
+# echo -e "cat,dog\nMeaow,Poop\nsteps on poop, poops a lot" | csv2json | jq
 
 import csv
 import json
