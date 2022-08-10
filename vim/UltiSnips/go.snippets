@@ -45,6 +45,14 @@ for name, tc := range cases {
 }
 endsnippet
 
+snippet atable
+for _, tt := range cases {
+	t.Run(tt.name, func(t *testing.T) {
+		$0
+	})
+}
+endsnippet
+
 snippet ae
 assert.Error(t, err)
 $0

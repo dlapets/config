@@ -11,6 +11,7 @@ Plugin 'AndrewRadev/linediff.vim'
 Plugin 'AndrewRadev/writable_search.vim.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'fatih/vim-go.git'
 Plugin 'fholgado/minibufexpl.vim.git'
 Plugin 'inkarkat/vim-ingo-library'
@@ -65,6 +66,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,*.gz
 
 set lazyredraw " otherwise using relativenumber is slow in terminal
 
+set cc=95
+
 "nmap <F5> :GoTest<CR>
 nmap <F6> :set relativenumber!<CR>
 nmap <F7> :Gblame<CR>
@@ -78,7 +81,7 @@ augroup END
 
 augroup indent
     autocmd FileType json setlocal ts=2 sw=2 expandtab
-    autocmd FileType yaml setlocal ts=2 sw=2 expandtab
+    autocmd FileType yaml setlocal ts=4 sw=4 expandtab
     autocmd FileType ruby setlocal ts=2 sw=2 expandtab
 augroup END
 
