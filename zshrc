@@ -83,8 +83,7 @@ COLOR_RESET="\e[39;49m\e[0m"
 # Paths and aliases
 ################################################################################
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$CONFIG_PATH/utils:$PATH" # TODO maybe there's a better way
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 if [ "$(uname)" = 'Linux' ]; then
     if [ -d /usr/games ]; then
@@ -96,10 +95,15 @@ if [ "$(uname)" = 'Linux' ]; then
 fi
 
 if [ "$(uname)" = 'Darwin' ]; then
-    # TODO check if it's actually there
-    alias vim=/usr/local/opt/vim/bin/vim
-    alias vi=/usr/local/opt/vim/bin/vim
+    if [ -d /opt/homebrew/sbin ]; then
+        export PATH="/opt/homebrew/sbin:$PATH"
+    fi
+    if [ -d /opt/homebrew/bin ]; then
+        export PATH="/opt/homebrew/bin:$PATH"
+    fi
 fi
+
+export PATH="$CONFIG_PATH/utils:$PATH" # TODO maybe there's a better way
 
 if type "fortune" > /dev/null; then
     # TODO reararnghe this
@@ -110,12 +114,14 @@ fi
 
 
 # Git
+alias gti="git"
 alias gfrb="git fetch && git rebase --keep-empty origin/master"
 alias gfrbi="git fetch && git rebase --keep-empty -i origin/master"
 alias glgg="git log --oneline --graph HEAD~10.. "
 alias glggg="git log --oneline --graph"
+alias glggn='git log --pretty="format:%C(yellow)%h%Creset %C(normal)%<(60,trunc)%s%Creset %C(normal bold)%<(9,trunc)%an"'
 alias gcd="d=\`git status -s|head -n1|sed -e 's/^...\(.*\)/\1/' -e 's/ ->.*//'\` && [[ -z \$d ]] || cd \`dirname \$d\`"
-alias gti="git"
+
 
 ################################################################################
 # Python
