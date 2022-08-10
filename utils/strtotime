@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+$cmd = basename(array_shift($argv));
+
+if (empty($argv)) {
+    echo "Usage: $cmd [string to convert]\n";
+    exit(1);
+}
+
+$unix = strtotime(implode(" ", $argv));
+
+echo date("Y-m-d H:i:s", $unix)."\n";
+exit(0);
