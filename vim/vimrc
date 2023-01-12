@@ -70,7 +70,7 @@ set cc=95
 
 "nmap <F5> :GoTest<CR>
 nmap <F6> :set relativenumber!<CR>
-nmap <F7> :Gblame<CR>
+nmap <F7> :Git blame<CR>
 nmap <F8> :TagbarToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 
