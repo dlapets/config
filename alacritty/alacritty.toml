@@ -1,0 +1,13 @@
+[general]
+
+import = [ "~/.config/alacritty/themes/solarized_dark.toml" ]
+
+
+
+[font]
+
+normal.family       = "Terminus"
+bold.family         = "Terminus"
+italic.family       = "Terminus"
+bold_italic.family  = "Terminus"
+
