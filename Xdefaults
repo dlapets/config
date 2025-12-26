@@ -1,3 +1,10 @@
+! Xft settings
+Xft.dpi:        96
+Xft.antialias:  false
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
 ! General
 !URxvt.termName:  rxvt-256color
 URxvt.loginShell:         true
@@ -21,16 +28,19 @@ URxvt.matcher.button:  1
 
 ! Appearance
 !  - use a bitmap font
-!URxvt.font:        -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
-!URxvt.boldFont:    -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+URxvt.font:        -xos4-terminus-medium-r-*-*-16-*-*-*-*-*-iso8859-*
+URxvt.boldFont:    -xos4-terminus-bold-r-*-*-16-*-*-*-*-*-iso8859-*
 !  - use xft for drawing fonts
-URxvt.font:       xft:Terminus:8
+!URxvt.font:       xft:Terminus:pixelsize=16
+!URxvt.boldFont:   xft:Terminus:pixelsize=16
 !  - cursor
 URxvt.cursorColor: #DCDCCC
 !  - pseudo transparency
 !URxvt.shading:    50
 !URxvt.transparent:true
 !
+! Needed fo fix some broken font rendering
+URxvt.letterSpace: 0
  
 #define S_base03        #002b36
 #define S_base02        #073642
