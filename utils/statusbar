@@ -1,0 +1,106 @@
+#!/bin/bash
+
+
+get_clock() {
+    local REAL_TIME="$( date +'%Y-%m-%d %H:%M:%S' )";
+
+    # For icon, get time in 15 minutes to that e.g. 11:20 shows up with the
+    # minute hand pointing down.
+    local ICON_TIME="$( date -d '+15 minutes' '+%I%M' | sed -e 's/^0//' )";
+    local ICON="???"
+    if   (( ICON_TIME >= 1230 )); then local ICON="🕧";
+    elif (( ICON_TIME >= 1200 )); then local ICON="🕛";
+    elif (( ICON_TIME >= 1130 )); then local ICON="🕦";
+    elif (( ICON_TIME >= 1100 )); then local ICON="🕚";
+    elif (( ICON_TIME >= 1030 )); then local ICON="🕥";
+    elif (( ICON_TIME >= 1000 )); then local ICON="🕙";
+    elif (( ICON_TIME >= 930  )); then local ICON="🕤";
+    elif (( ICON_TIME >= 900  )); then local ICON="🕘";
+    elif (( ICON_TIME >= 830  )); then local ICON="🕣";
+    elif (( ICON_TIME >= 800  )); then local ICON="🕗";
+    elif (( ICON_TIME >= 730  )); then local ICON="🕢";
+    elif (( ICON_TIME >= 700  )); then local ICON="🕖";
+    elif (( ICON_TIME >= 630  )); then local ICON="🕡";
+    elif (( ICON_TIME >= 600  )); then local ICON="🕕";
+    elif (( ICON_TIME >= 530  )); then local ICON="🕠";
+    elif (( ICON_TIME >= 500  )); then local ICON="🕔";
+    elif (( ICON_TIME >= 430  )); then local ICON="🕟";
+    elif (( ICON_TIME >= 400  )); then local ICON="🕓";
+    elif (( ICON_TIME >= 330  )); then local ICON="🕞";
+    elif (( ICON_TIME >= 300  )); then local ICON="🕒";
+    elif (( ICON_TIME >= 230  )); then local ICON="🕝";
+    elif (( ICON_TIME >= 200  )); then local ICON="🕑";
+    elif (( ICON_TIME >= 130  )); then local ICON="🕜";
+    elif (( ICON_TIME >= 100  )); then local ICON="🕐";
+    fi
+
+    echo "$ICON $REAL_TIME";
+}
+
+
+#➜  ~ cat /sys/class/power_supply/BAT0/uevent
+#DEVTYPE=power_supply
+#POWER_SUPPLY_NAME=BAT0
+#POWER_SUPPLY_TYPE=Battery
+#POWER_SUPPLY_STATUS=Not charging
+#POWER_SUPPLY_PRESENT=1
+#POWER_SUPPLY_TECHNOLOGY=Li-ion
+#POWER_SUPPLY_CYCLE_COUNT=0
+#POWER_SUPPLY_VOLTAGE_MIN_DESIGN=11100000
+#POWER_SUPPLY_VOLTAGE_NOW=12473000
+#POWER_SUPPLY_POWER_NOW=0
+#POWER_SUPPLY_ENERGY_FULL_DESIGN=86580000
+#POWER_SUPPLY_ENERGY_FULL=65630000
+#POWER_SUPPLY_ENERGY_NOW=65380000
+#POWER_SUPPLY_CAPACITY=99
+#POWER_SUPPLY_CAPACITY_LEVEL=Normal
+#POWER_SUPPLY_MODEL_NAME=45N1029
+#POWER_SUPPLY_MANUFACTURER=LGC
+#POWER_SUPPLY_SERIAL_NUMBER= 4735
+
+get_battery() {
+    local DEV="/sys/class/power_supply/BAT0/uevent"
+    local PERCENT=$(cat $DEV | grep "_CAPACITY=" | sed 's/.*=//')
+    local STATUS=$(cat $DEV | grep "_STATUS=" | sed 's/.*=//')
+
+    # "🔋";
+    # "🪫"
+    # "⚡"
+    # "🔌";
+    local ICON="🔋";
+    case "$STATUS" in
+        "Not charging")
+            local ICON="🔌";
+            ;;
+
+        "Charging")
+            local ICON="⚡"
+            ;;
+
+        "Discharging")
+            if (( PERCENT < 20 )); then
+                local ICON="🪫";
+
+            else
+                local ICON="🔋";
+            fi
+            ;;
+    esac
+
+    echo "$ICON $PERCENT%";
+}
+
+get_thermals() {
+    local DEV="/sys/class/thermal/thermal_zone0/temp"
+    local TEMP=$( cat $DEV );
+    local TEMP=$(( $TEMP / 1000 ));
+    printf "🌡️ ${TEMP}°C"
+}
+
+while true; do
+    CLOCK=$(get_clock);
+    BAT="$(get_battery)";
+    THERMALS="$(get_thermals)";
+    echo "$THERMALS    $BAT    $CLOCK"
+    sleep 0.01;
+done
