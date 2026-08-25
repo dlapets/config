@@ -1,6 +1,8 @@
 set nocompatible
 filetype off " vundle needs this
 
+let s:uname = system("uname -s")
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -26,6 +28,10 @@ Plugin 'sotte/presenting.vim'
 Plugin 'tobyS/vmustache.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-unimpaired.git'
+
+if s:uname == "Linux"
+    Plugin 'jasonccox/vim-wayland-clipboard'
+endif
 
 call vundle#end()            " required
 filetype plugin indent on    " required
