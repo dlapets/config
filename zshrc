@@ -79,31 +79,35 @@ COLOR_WHITE_BRIGHT="\e[37;1m"
 
 COLOR_RESET="\e[39;49m\e[0m"
 
+
 ################################################################################
 # Paths and aliases
 ################################################################################
+WANT_PATHS=(
+    "/sbin"
+    "/usr/sbin"
+    "/usr/local/sbin"
+    "/usr/local/bin"
+    "/bin"
+    "/usr/bin"
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+    # Linux stuff
+    "/usr/bin/games"
+    "/usr/local/go/bin"
+    
+    # Mac stuff
+    "/opt/homebrew/sbin"
+    "/opt/homebrew/bin"
 
-if [ "$(uname)" = 'Linux' ]; then
-    if [ -d /usr/games ]; then
-        export PATH="/usr/games:$PATH"
-    fi
-    if [ -d /usr/local/go/bin ]; then
-        export PATH="/usr/local/go/bin:$PATH"
-    fi
-fi
+    # Stuff from the config repo
+    "$CONFIG_PATH/utils"
+)
 
-if [ "$(uname)" = 'Darwin' ]; then
-    if [ -d /opt/homebrew/sbin ]; then
-        export PATH="/opt/homebrew/sbin:$PATH"
+for WANT in "${WANT_PATHS}"; do
+    if [[ -d "$WANT" && ! ${path[(Ie)$WANT]} ]]; then
+        export PATH="$WANT:$PATH"
     fi
-    if [ -d /opt/homebrew/bin ]; then
-        export PATH="/opt/homebrew/bin:$PATH"
-    fi
-fi
-
-export PATH="$CONFIG_PATH/utils:$PATH" # TODO maybe there's a better way
+done
 
 if type "fortune" > /dev/null; then
     # TODO reararnghe this
